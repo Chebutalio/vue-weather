@@ -51,7 +51,7 @@ export default {
         .get(`https://api.openweathermap.org/data/2.5/forecast?q=${this.city},${this.country}&units=metric&mode=json&APPID=8d892cf4558e0259c7af92b77e03b096`)
         .then(response => (this.info = response.data.list))
         .catch(error => {
-          console.log(error)
+          console.error(error)
           this.errored = true
         })
         .finally(() => (this.loading = false))
